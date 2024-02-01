@@ -1,0 +1,2 @@
+We are building an affordable all in one platform that streamlines operations, optimizes costs, and drives growth, all through intuitive tools, AI-powered insights, and mobile accessibility because, Restaurant owners juggle clunky software for reservations, inventory, orders, staff, POS, marketing, Swiggy Zomato menu, and much more. This inefficiency wastes time, strains communication, and ultimately costs them revenue. 
+ By building our software we'll empower them to focus on their passion, we can help restaurants thrive in today's competitive market.

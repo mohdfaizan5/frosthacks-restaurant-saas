@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Transaction from "./components/Transaction";
+import Customer from "./components/Customer";
+import { Outlet, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import Menu from "./components/Menu";
+import Analytics from "./components/Analytics";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="flex overflow-x-hidden">
+      <Navbar />
+      <div className="flex flex-col w-full">
+        <Header />
+        <Outlet />
+        <Routes>
+          <Route path="/customer" element={<Customer />} />
+          <Route path="/transactions" index element={<Transaction />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/"  element={<Menu />} />
+          <Route path="/analytics" element={<Analytics message="Analytics" />} />
+          <Route path="/wa" element={<Analytics message="Whatapp Marketing" />} />
+          <Route path="/em" element={<Analytics message="Email Marketing" />} />
+          <Route path="/setting" element={<Analytics message="Work In progress" />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;

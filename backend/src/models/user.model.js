@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+import mongoose, { Schema, model } from "mongoose";
 
 const userSchema = Schema(
   {
@@ -16,6 +16,10 @@ const userSchema = Schema(
       required: true,
       unique: true
     },
+    // menus:{
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: Category
+    // }
   },
   {
     timestamps: true,
@@ -23,4 +27,6 @@ const userSchema = Schema(
 );
 
 const User = model("User", userSchema); // users
-module.exports = User;
+export default User
+
+
